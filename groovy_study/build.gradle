@@ -1,0 +1,451 @@
+////속성
+//version = '1.0.1'
+//myCopyTask.description = 'Copies some files'
+//
+//file("$buildDir/classes")
+//println "Destination: ${myCopyTask.destinationDir}"
+//
+//// 메서드
+//project.getVersion()
+//project.version
+//
+//project.setVersion('1.0.1')
+//project.version = '1.0.1'
+//
+//myCopyTask.include '**/*.xml', '**/*.properties'
+//
+//// 'copySpec()' 은 Project 으로 부터 온다.
+//ext.resourceSpec = copySpec()
+//
+//file('src/main/java')
+//println 'Hello, World!'
+
+// 블록
+//plugins {
+//    id 'java-library'
+//}
+//
+//configurations {
+//    asserts
+//}
+//
+//sourceSets {
+//    main {
+//        java {
+//            srcDirs = ['src']
+//        }
+//    }
+//}
+//
+//dependencies {
+////    implementation project(':util')
+//}
+//
+//println 'This is executed during the configuration phase.'
+//
+//tasks.register('configured') {
+//	println 'This is also executed during the configuration phase, because :configured is used in the build.'
+//}
+//
+//tasks.register('test1') {
+//	doLast {
+//		println 'This is executed during the execution phase.'
+//	}
+//}
+//
+//tasks.register('testBoth') {
+//	doFirst {
+//		println 'This is executed first during execution phase.'
+//	}
+//	doLast {
+//		println 'This is executed last during the execution phase.'
+//	}
+//	println 'This is executed during the configuration phase as well, because :testBoth is used in the build.'
+//}
+//
+//// 특정 속성이 설정된 각 프로젝트에 테스트 작업 추가
+//project.ext.hasTests = false
+//
+//allprojects {
+//	afterEvaluate { project ->
+//		if (project.hasTests) {
+//			println "Adding test task to $project"
+//			project.task('test') {
+//				doLast {
+//					println "Running tests for $project"
+//				}
+//			}
+//		}
+//	}
+//}
+//
+//gradle.afterProject { project ->
+//	if (project.state.failure) {
+//		println "Evaluation of $project FAILED"
+//	} else {
+//		println "Evaluation of $project succeeded"
+//	}
+//}
+//
+//tasks.whenTaskAdded { task ->
+//	task.ext.srcDir = 'src/main/java'
+//}
+//
+//tasks.register('a')
+//
+//println "source dir is $a.srcDir"
+//
+//tasks.register('ok')
+//
+//tasks.register('broken') {
+//	dependsOn ok
+//	doLast {
+//		throw new RuntimeException('broken')
+//	}
+//}
+//
+//gradle.taskGraph.beforeTask { Task task ->
+//	println "executing $task ..."
+//}
+//
+//gradle.taskGraph.afterTask { Task task, TaskState state ->
+//	if (state.failure) {
+//		println "FAILED"
+//	} else {
+//		println "done"
+//	}
+//}
+//
+//// 지역 변수
+//def i = 1
+//String errorMsg = 'Failed, because reasons'
+
+//tasks.register('hello') {
+//    doLast {
+//        println 'Hello world!'
+//    }
+//}
+
+//tasks.register('upper') {
+//    doLast {
+//        String someString = 'mY_nAmE'
+//        println "Original: $someString"
+//        println "Upper case: ${someString.toUpperCase()}"
+//    }
+//}
+//
+//tasks.register('count') {
+//    doLast {
+//        4.times {print "$it "}
+//    }
+//}
+
+//tasks.register('hello') {
+//    doLast {
+//        println 'Hello world!'
+//    }
+//}
+//
+//tasks.register('intro') {
+//    dependsOn tasks.hello
+//    doLast {
+//        println "I'm Gradle"
+//    }
+//}
+//
+//tasks.register('tasksX') {
+//    dependsOn 'taskY'
+//    doLast {
+//        println 'taskX'
+//    }
+//}
+//
+//tasks.register('taskY') {
+//    doLast {
+//        println 'taskY록'
+//    }
+//}
+//
+//// 작업의 유연한 등록
+//4.times { counter ->
+//    tasks.register("task$counter") {
+//        doLast {
+//            println "I'm task number $counter"
+//        }
+//    }
+//}
+//
+//// API 를 통해 작업에 엑세스 - 종속성 추가
+//tasks.named('task0') { dependsOn('task2', 'task3')}
+
+//tasks.register('hello') {
+//    doLast {
+//        println 'Hello Earth'
+//    }
+//}
+//
+//tasks.named('hello') {
+//    doFirst {
+//        println 'Hello Venus'
+//    }
+//}
+//
+//tasks.named('hello') {
+//    doLast {
+//        println 'Hello Mars'
+//    }
+//}
+//
+//tasks.named('hello') {
+//    doLast {
+//        println 'Hello Jupiter'
+//    }
+//}
+
+//tasks.register('loadfile') {
+//    doLast {
+//        def files = file('./antLoadfileResources').listFiles().sort()
+//        files.each { File file ->
+//            if (file.isFile()) {
+//                ant.loadfile(srcFile: file, property: file.name)
+//            }
+//        }
+//    }
+//}
+
+//tasks.register('checksum') {
+//    doLast {
+//        fileList('./antLoadfileResources').each { File file ->
+//            ant.checksum(file: file, property: "cs_$file.name")
+//            println "$file.name Checksum: ${ant.properties["cs_$file.name"]}"
+//        }
+//    }
+//}
+//
+//tasks.register('loadfile') {
+//    doLast {
+//        fileList('./antLoadfileResources').each { File file ->
+//            ant.loadfile(srcFile: file, property: file.name)
+//            println "I'm fond of $file.name"
+//        }
+//    }
+//}
+//
+//
+//
+//File[] fileList(String dir) {
+//    file(dir).listFiles({file -> file.isFile()} as FileFilter).sort()
+//}
+
+//defaultTasks 'clean', 'run'
+//
+//tasks.register('clean') {
+//    doLast {
+//        println 'Default Cleaning!'
+//    }
+//}
+//
+//tasks.register('run') {
+//    doLast {
+//        println 'Default Running!'
+//    }
+//}
+//
+//tasks.register('other') {
+//    doLast {
+//        println "I'm not a default task!"
+//    }
+//}
+
+//import org.apache.commons.codec.binary.Base64
+//
+//buildscript {
+//    repositories {
+//        mavenCentral()
+//    }
+//    dependencies {
+//        classpath group: 'commons-codec', name: 'commons-codec', version: '1.2'
+//    }
+//}
+//
+//tasks.register('encode') {
+//    doLast {
+//        def byte[] encodedString = new Base64().encode('hello world\n'.getBytes())
+//        print new String(encodedString)
+//    }
+//}
+
+//println name
+//println project.name
+
+//def dest = 'dest'
+//
+//tasks.register('copy', Copy) {
+//    from 'source'
+//    into dest
+//}
+
+//plugins {
+//    id 'java-library'
+//}
+//
+//ext {
+//    springVersion = "3.1.0.RELEASE"
+//    emailNotification = "test@test.com"
+//}
+//
+//sourceSets.all {ext.purpose = null }
+//
+//sourceSets {
+//    main {
+//        purpose = "production"
+//    }
+//    test {
+//        purpose = "test"
+//    }
+//    plugin {
+//        purpose = "production"
+//    }
+//}
+//
+//tasks.register('printProperties') {
+//    doLast {
+//        println springVersion
+//        println emailNotification
+//        sourceSets.matching { it.purpose == "production"}.each { println it.name}
+//    }
+//}
+
+// 임의 객체 구성
+//import java.text.FieldPosition
+//
+//tasks.register('configure') {
+//    doLast {
+//        def pos = configure(new FieldPosition(10)) {
+//            beginIndex = 1
+//            endIndex = 5
+//        }
+//        println pos.beginIndex
+//        println pos.endIndex
+//    }
+//}
+
+// 외부 스크립트를 사용하여 임의 객체 구성
+//tasks.register('configure') {
+//    doLast {
+//        def pos = new java.text.FieldPosition(10)
+//        apply from: 'other.gradle', to: pos
+//        println pos.beginIndex
+//        println pos.endIndex
+//    }
+//}
+
+//configurations.runtimeClasspath.each { File f -> println f}
+
+//println project.buildDir
+//println getProject().getBuildDir()
+//
+//project.buildDir = 'target'
+//getProject().setBuildDir('target')
+//
+//test.systempProperty 'some.prop', 'value'
+//test.systempProperty('some.prop', 'value')
+
+// List, Map 리터럴
+//test.includes = ['org/gradle/api/**', 'org/gradle/internal/**']
+//
+//List<String> list = new ArrayList<String>()
+//list.add('org/gradle/api/**')
+//list.add('org/gradle/internal/**')
+//test.includes = list
+//
+//Map<String, String> map = [key1: 'value1', key2: 'value2']
+//
+//apply plugin: 'java'
+
+//repositories {
+//    println "in a closure"
+//}
+//repositories() {println "in a closure"}
+//repositories({println "in a closure"})
+//apply plugin: 'java'
+//
+//repositories {mavenCentral()}
+//
+//dependencies {
+//    assert delegate == project.dependencies
+//    testImplementation('junit:junit:4.13')
+//    delegate.testImplementation('junit:junit:4.13')
+//}
+
+//throw new StopExecutionException()
+
+//plugins {
+//    id 'java'
+//    id 'com.jfrog.bintray' version '1.8.5용'
+//}
+
+
+
+//plugins {
+//    id 'com.example.hello' version '1.0.0' apply false
+//    id 'com.example.goodbye' version '1.0.0' apply false
+//}
+
+//plugins {
+//    id 'my-plugin'
+//}
+
+//plugins {
+//    id 'com.example.hello'
+//}
+
+//plugins {
+//    id 'java-gradle-plugin'
+//    id 'maven-publish'
+//    id 'ivy-publish'
+//}
+//
+//group 'com.example'
+//version '1.0.0'
+//
+//gradlePlugin {
+//    plugins {
+//        hello {
+//            id = 'com.example.hello'
+//            implementationClass = 'com.example.hello.HelloPlugin'
+//        }
+//        goodbye {
+//            id = 'com.example.goodbye'
+//            implementationClass = 'com.example.goodbye.GoodbyePlugin'
+//        }
+//    }
+//}
+//
+//publishing {
+//    repositories {
+//        maven {
+//            url 'consuming/maven-repo'
+//        }
+//        ivy {
+//            url 'consuming/ivy-repo'
+//        }
+//    }
+//}
+
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.5'
+    }
+}
+
+apply plugin: 'com.jfrog.bintray'
+apply from: 'other.gradle'
+
+
+
+
+

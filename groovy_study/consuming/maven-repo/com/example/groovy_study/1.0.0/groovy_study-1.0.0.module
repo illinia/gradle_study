@@ -1,0 +1,60 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.example",
+    "module": "groovy_study",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "7.5.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "groovy_study-1.0.0.jar",
+          "url": "groovy_study-1.0.0.jar",
+          "size": 2046,
+          "sha512": "e541bc00a13f58b9d86ed5ec4d5c530ad15e9d51c2e00394241aeae0210802ad6f9aba992de1fdb54e7403c3be5f9ffe48c0a8df34305be59429cec5178695b2",
+          "sha256": "e904f1d824286e069fec4f7109c0b4d334e4e0c99d27ea7bf3e3416e7971ac21",
+          "sha1": "3e1dbe11810bf657b00791626b6004bf6e8ac2df",
+          "md5": "944b0e28dd15a0f6d01839deaaaaa4b6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "groovy_study-1.0.0.jar",
+          "url": "groovy_study-1.0.0.jar",
+          "size": 2046,
+          "sha512": "e541bc00a13f58b9d86ed5ec4d5c530ad15e9d51c2e00394241aeae0210802ad6f9aba992de1fdb54e7403c3be5f9ffe48c0a8df34305be59429cec5178695b2",
+          "sha256": "e904f1d824286e069fec4f7109c0b4d334e4e0c99d27ea7bf3e3416e7971ac21",
+          "sha1": "3e1dbe11810bf657b00791626b6004bf6e8ac2df",
+          "md5": "944b0e28dd15a0f6d01839deaaaaa4b6"
+        }
+      ]
+    }
+  ]
+}

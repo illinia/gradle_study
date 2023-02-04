@@ -1,0 +1,15 @@
+rootProject.name = 'individual_multi_project'
+//include 'app', 'lib'
+
+//rootProject.name = 'dependencies-java'
+//include 'api', 'shared', 'services:person-service'
+
+//include 'project1', 'proejct2:child', 'project3:child1'
+
+//include('project-a')
+//println rootProject.name
+//println project(':project-a').name
+
+include('project-a')
+project(':project-a').projectDir = file('../my-project-a')
+project(':project-a').buildFileName = 'project-a.gradle'
