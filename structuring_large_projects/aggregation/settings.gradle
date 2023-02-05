@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+    includeBuild('../build-logic')
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
+includeBuild('../platforms')
+includeBuild('../admin-feature')
+includeBuild('../user-feature')
+
+rootProject.name = 'aggregation'
+include 'test-coverage'
+include 'test-coverage'
+

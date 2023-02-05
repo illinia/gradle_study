@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76155ac1-c3c5-4905-b6c8-cf8726116353" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../gascharge" beforeDir="false" afterPath="$PROJECT_DIR$/../../gascharge" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../gascharge-front/react-social" beforeDir="false" afterPath="$PROJECT_DIR$/../../gascharge-front/react-social" afterDir="false" />
-    </list>
+    <list default="true" id="76155ac1-c3c5-4905-b6c8-cf8726116353" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +12,9 @@
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/../structuring_large_projects/untitled">
       <ProjectState />
     </projectState>
   </component>
@@ -48,7 +48,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/taemin/portfolio/gradle_study/individual_multi_project/build.gradle",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "/Users/taemin/portfolio/gradle_study/individual_multi_project",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +61,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,7 +76,7 @@
       <updated>1675507026394</updated>
       <workItem from="1675507027669" duration="172000" />
       <workItem from="1675507908811" duration="75000" />
-      <workItem from="1675515392171" duration="413000" />
+      <workItem from="1675515392171" duration="1193000" />
     </task>
     <servers />
   </component>
@@ -82,7 +88,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

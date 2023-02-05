@@ -1,0 +1,7 @@
+plugins {
+    id('com.example.kotlin-library')
+}
+
+println "state application-state group : ${group}"
+
+group = "${group}.state"

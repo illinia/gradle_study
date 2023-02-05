@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+    includeBuild('../build-logic')
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
+includeBuild('../platforms')
+includeBuild('../domain-model')
+includeBuild('../state')
+
+rootProject.name = 'admin-feature'
+include('config')
+
